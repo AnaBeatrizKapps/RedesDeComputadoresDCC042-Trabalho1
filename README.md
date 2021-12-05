@@ -1,1 +1,2 @@
-# RedesDeComputadoresDCC042-Trabalho1
+# Redes-de-Computadores-DCC042---Trabalho-1-
+Client-Server using SOCKET
