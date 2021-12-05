@@ -30,4 +30,4 @@ $ python3 client.py
 
 Pronto! Cliente conectado no servidor. 
 
-Agora o cliente e o servidor podem se comunicar escrevendo/lendo de seus respectivos sockets.
+Agora o cliente e o servidor podem se comunicar escrevendo/lendo de seus respectivos sockets. Para essa comunicação ocorrer é necessário que o usuário digite **echo** antes da mensagem.
