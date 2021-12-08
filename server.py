@@ -9,7 +9,7 @@ FORMAT = "utf-8"
 QUIT_MSG = "QUIT"
 
 def handle_client(conn, addr):
-  print(f"[NEW CONNECTION] {addr} connected.")
+  print(f"[NOVA CONEXAO] {addr} conectado.")
 
   connected = True
   while connected:
@@ -18,23 +18,23 @@ def handle_client(conn, addr):
       connected = False
     
     print(f"[{addr}] {msg}")
-    msg = f"Msg received: {msg}"
+    msg = f"Mensagem recebida: {msg}"
     conn.send(msg.encode(FORMAT))
 
   conn.close()
 
 def main():
-  print("[STARTING] Server is starting...")
+  print("[INICIANDO] Servidor esta iniciando...")
   server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   server.bind(ADDR)
   server.listen()
-  print(f"[LISTENING] Server is listening on {IP}:{PORT}")
+  print(f"[ESCUTANDO] Servidor esta escutando em {IP}:{PORT}")
 
   while True:
     conn, addr = server.accept()
     thread = threading.Thread(target=handle_client, args=(conn, addr))
     thread.start()
-    print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
+    print(f"[CONEXOES ATIVAS] {threading.activeCount() - 1}")
 
 if __name__ == "__main__":
   main()

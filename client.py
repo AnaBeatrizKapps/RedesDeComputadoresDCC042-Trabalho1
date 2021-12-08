@@ -11,14 +11,12 @@ QUIT_MSG = "QUIT"
 def main():
   client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   client.connect(ADDR)
-  print(f"[CONNECTED] Client connected to server at {IP}:{PORT}")
+  print(f"[CONECTADO] Cliente conectado ao servidor em {IP}:{PORT}")
   
 
   connected = True
   while connected:
     msg = input("> ")
-
-    # client.send(msg.encode(FORMAT))
 
     if 'echo' in msg or 'ECHO' in msg:
       client.send(msg.encode(FORMAT))
@@ -27,6 +25,8 @@ def main():
     elif(QUIT_MSG in msg):
       client.send(msg.encode(FORMAT))
       connected = False
+    else:
+      print("server: comando invalido!")
 
 if __name__ == "__main__":
   main()
